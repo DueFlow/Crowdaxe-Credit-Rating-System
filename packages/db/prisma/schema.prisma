@@ -1,0 +1,768 @@
+// Crowdaxe Credit Rating System: database schema (docs/architecture.md section 8).
+// Plain PostgreSQL through Prisma only: no provider-specific features, so the database can move to any
+// PostgreSQL host. Row Level Security is switched on for every table in migration 0002 (see ops/sql/README.md).
+
+generator client {
+  provider      = "prisma-client-js"
+  // native (development), AWS Lambda / Netlify functions (rhel), Debian containers (Docker)
+  binaryTargets = ["native", "rhel-openssl-3.0.x", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // pooled connection for the app (Supabase: add pgbouncer=true)
+  directUrl = env("DIRECT_URL") // direct connection for migrations
+}
+
+// ============================================================================================
+// Identity and audit (used from Phase 3)
+// ============================================================================================
+
+model User {
+  id           String    @id @default(uuid()) @db.Uuid
+  /// Stored in lower case; unique.
+  email        String    @unique
+  name         String
+  passwordHash String?   @map("password_hash")
+  isActive     Boolean   @default(true) @map("is_active")
+  totpSecret   String?   @map("totp_secret") /// encrypted at rest by the app
+  totpEnabled  Boolean   @default(false) @map("totp_enabled")
+  failedLogins Int       @default(0) @map("failed_logins")
+  lockedUntil  DateTime? @map("locked_until") @db.Timestamptz(3)
+  lastLoginAt  DateTime? @map("last_login_at") @db.Timestamptz(3)
+  entraOid     String?   @unique @map("entra_oid")
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  roles          UserRole[]      @relation("UserRoles")
+  rolesGranted   UserRole[]      @relation("RoleGrants")
+  sessions       Session[]
+  loginEvents    LoginEvent[]
+  passwordResets PasswordReset[]
+  auditEntries   AuditLog[]
+
+  @@map("users")
+}
+
+model Role {
+  code        String     @id
+  name        String
+  description String?
+  users       UserRole[]
+
+  @@map("roles")
+}
+
+model UserRole {
+  userId      String   @map("user_id") @db.Uuid
+  roleCode    String   @map("role_code")
+  grantedById String?  @map("granted_by") @db.Uuid
+  grantedAt   DateTime @default(now()) @map("granted_at") @db.Timestamptz(3)
+
+  user      User  @relation("UserRoles", fields: [userId], references: [id])
+  role      Role  @relation(fields: [roleCode], references: [code])
+  grantedBy User? @relation("RoleGrants", fields: [grantedById], references: [id])
+
+  @@id([userId, roleCode])
+  @@map("user_roles")
+}
+
+model Session {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @map("user_id") @db.Uuid
+  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  lastSeenAt DateTime  @default(now()) @map("last_seen_at") @db.Timestamptz(3)
+  expiresAt  DateTime  @map("expires_at") @db.Timestamptz(3)
+  ip         String?
+  userAgent  String?   @map("user_agent")
+  revokedAt  DateTime? @map("revoked_at") @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model LoginEvent {
+  id         BigInt   @id @default(autoincrement())
+  userId     String?  @map("user_id") @db.Uuid
+  emailTried String   @map("email_tried")
+  ip         String?
+  success    Boolean
+  reason     String?
+  at         DateTime @default(now()) @db.Timestamptz(3)
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@index([emailTried, at])
+  @@index([ip, at])
+  @@map("login_events")
+}
+
+model Invitation {
+  id          String    @id @default(uuid()) @db.Uuid
+  email       String
+  tokenHash   String    @unique @map("token_hash")
+  roles       String[]
+  invitedById String?   @map("invited_by") @db.Uuid
+  expiresAt   DateTime  @map("expires_at") @db.Timestamptz(3)
+  usedAt      DateTime? @map("used_at") @db.Timestamptz(3)
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@map("invitations")
+}
+
+model PasswordReset {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at") @db.Timestamptz(3)
+  usedAt    DateTime? @map("used_at") @db.Timestamptz(3)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("password_resets")
+}
+
+model AuditLog {
+  id         BigInt   @id @default(autoincrement())
+  at         DateTime @default(now()) @db.Timestamptz(3)
+  userId     String?  @map("user_id") @db.Uuid
+  /// e.g. "import.run", "parameterSet.activate", "rating.finalise"
+  action     String
+  entityType String   @map("entity_type")
+  entityId   String?  @map("entity_id")
+  before     Json?
+  after      Json?
+  ip         String?
+  requestId  String?  @map("request_id")
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@index([entityType, entityId])
+  @@index([at])
+  @@map("audit_log")
+}
+
+// ============================================================================================
+// Methodology: versioned parameter sets (one set = all scalars and tables)
+// ============================================================================================
+
+enum ParameterSetStatus {
+  DRAFT
+  PROPOSED
+  APPROVED
+  ACTIVE
+  RETIRED
+}
+
+model ParameterSet {
+  id              String             @id @default(uuid()) @db.Uuid
+  version         String             @unique
+  methodVersion   String             @map("method_version")
+  workbookVersion String             @map("workbook_version")
+  status          ParameterSetStatus @default(DRAFT)
+  effectiveDate   DateTime?          @map("effective_date") @db.Date
+  clonedFromId    String?            @map("cloned_from_id") @db.Uuid
+  source          String?
+  notes           String?
+  /// SHA-256 of the canonical JSON document, to detect changes on re-import
+  contentHash     String             @map("content_hash")
+  createdById     String?            @map("created_by") @db.Uuid
+  createdAt       DateTime           @default(now()) @map("created_at") @db.Timestamptz(3)
+  proposedAt      DateTime?          @map("proposed_at") @db.Timestamptz(3)
+  proposedById    String?            @map("proposed_by") @db.Uuid
+  approvedAt      DateTime?          @map("approved_at") @db.Timestamptz(3)
+  approvedById    String?            @map("approved_by") @db.Uuid
+  activatedAt     DateTime?          @map("activated_at") @db.Timestamptz(3)
+  activatedById   String?            @map("activated_by") @db.Uuid
+  retiredAt       DateTime?          @map("retired_at") @db.Timestamptz(3)
+
+  clonedFrom  ParameterSet?       @relation("Clone", fields: [clonedFromId], references: [id])
+  clones      ParameterSet[]      @relation("Clone")
+  parameters  Parameter[]
+  ratingScale RatingScaleRow[]
+  overlays    Overlay[]
+  structures  Structure[]
+  modules     Module[]
+  factors     Factor[]
+  descriptors FactorDescriptor[]
+  subSectors  SubSector[]
+  haircuts    CollateralHaircut[]
+  questions   SectorQuestion[]
+  shocks      StressShock[]
+  listItems   ListItem[]
+  ratings     Rating[]
+
+  @@map("parameter_sets")
+}
+
+model Parameter {
+  setId     String  @map("set_id") @db.Uuid
+  name      String
+  valueNum  Float?  @map("value_num")
+  valueText String? @map("value_text")
+  unit      String?
+  ref       String?
+  note      String?
+  proposed  Boolean @default(false)
+  origin    String?
+  sort      Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, name])
+  @@map("parameters")
+}
+
+model RatingScaleRow {
+  setId        String @map("set_id") @db.Uuid
+  grade        Int
+  description  String
+  cxScale      String @map("cx_scale")
+  pd           Float
+  appetite     String
+  reviewMonths Int    @map("review_months")
+  reviewCycle  String @map("review_cycle")
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, grade])
+  @@map("rating_scale")
+}
+
+model Overlay {
+  setId       String  @map("set_id") @db.Uuid
+  ord         Int
+  name        String
+  maxNotches  Int     @map("max_notches")
+  descriptor0 String? @map("descriptor_0")
+  descriptor1 String? @map("descriptor_1")
+  descriptor2 String? @map("descriptor_2")
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, ord])
+  @@map("overlays")
+}
+
+model Structure {
+  setId           String  @map("set_id") @db.Uuid
+  code            String
+  track           String
+  name            String
+  minNotch        Int     @map("min_notch")
+  maxNotch        Int     @map("max_notch")
+  selfLiquidating Boolean @map("self_liquidating")
+  offtake         Boolean
+  ref             String?
+  conditions      String?
+  proposed        Boolean @default(false)
+  sort            Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, code])
+  @@map("structures")
+}
+
+model Module {
+  setId        String  @map("set_id") @db.Uuid
+  code         String
+  name         String
+  track        String
+  factorSet    String  @map("factor_set")
+  subSectorSet String? @map("subsector_set")
+  haircutSet   String  @map("haircut_set")
+  ref          String?
+  sort         Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, code])
+  @@map("modules")
+}
+
+model Factor {
+  setId        String  @map("set_id") @db.Uuid
+  key          String
+  setCode      String  @map("set_code")
+  ord          Int
+  pillar       String
+  profile      String?
+  name         String
+  weight       Float
+  measure      String?
+  unit         String?
+  type         String
+  direction    String?
+  scale        Int
+  nb           Int
+  bounds       Float[]
+  fFlags       Int[]   @map("f_flags")
+  neg          Boolean
+  groupCode    String? @map("group_code")
+  optional     Boolean
+  trackOnly    String? @map("track_only")
+  role         String?
+  link         String?
+  ref          String?
+  autoCode     String? @map("auto_code")
+  legacyTopCut Float?  @map("legacy_top_cut")
+  legacyBotCut Float?  @map("legacy_bot_cut")
+  legacyJudge  Float?  @map("legacy_judge")
+  sort         Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, key])
+  @@map("factors")
+}
+
+model FactorDescriptor {
+  setId     String @map("set_id") @db.Uuid
+  factorKey String @map("factor_key")
+  band      Int
+  text      String
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, factorKey, band])
+  @@map("factor_descriptors")
+}
+
+model SubSector {
+  setId     String  @map("set_id") @db.Uuid
+  setCode   String  @map("set_code")
+  ord       Int
+  name      String
+  gradeLow  Float?  @map("grade_low")
+  gradeHigh Float?  @map("grade_high")
+  special   String?
+  sort      Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, setCode, ord])
+  @@map("sub_sectors")
+}
+
+model CollateralHaircut {
+  setId            String  @map("set_id") @db.Uuid
+  setCode          String  @map("set_code")
+  ord              Int
+  name             String
+  haircutLow       Float   @map("haircut_low")
+  haircutHigh      Float   @map("haircut_high")
+  crossBorderAddOn Float   @map("cross_border_addon")
+  ref              String?
+  /// Module rows "(linked)" to a CORE default: the CORE row's order number
+  linkedCoreOrd    Int?    @map("linked_core_ord")
+  sort             Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, setCode, ord])
+  @@map("collateral_haircuts")
+}
+
+model SectorQuestion {
+  setId           String  @map("set_id") @db.Uuid
+  moduleCode      String  @map("module_code")
+  ord             Int
+  kind            String
+  question        String
+  flagAnswer      String  @map("flag_answer")
+  targetFactorKey String? @map("target_factor_key")
+  modifierType    String? @map("modifier_type")
+  modifierValue   Float?  @map("modifier_value")
+  ref             String?
+  proposed        Boolean @default(false)
+  sort            Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, moduleCode, ord])
+  @@map("sector_questions")
+}
+
+model StressShock {
+  setId        String  @map("set_id") @db.Uuid
+  moduleCode   String  @map("module_code")
+  ord          Int
+  name         String
+  sizeText     String? @map("size_text")
+  ref          String?
+  costType     String  @map("cost_type")
+  defaultValue Float   @map("default_value")
+  sort         Int
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, moduleCode, ord])
+  @@map("stress_shocks")
+}
+
+model ListItem {
+  setId    String  @map("set_id") @db.Uuid
+  listCode String  @map("list_code")
+  sort     Int
+  label    String
+  isActive Boolean @default(true) @map("is_active")
+
+  set ParameterSet @relation(fields: [setId], references: [id], onDelete: Cascade)
+
+  @@id([setId, listCode, sort])
+  @@map("list_items")
+}
+
+/// Operational switches and texts that are not methodology (reviewer step, IC sign-off, SSO, branding …)
+model Setting {
+  key         String   @id
+  value       Json
+  updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(3)
+  updatedById String?  @map("updated_by") @db.Uuid
+
+  @@map("settings")
+}
+
+// ============================================================================================
+// Business data
+// ============================================================================================
+
+enum RecordSource {
+  APP
+  WORKBOOK_IMPORT
+  SEED
+}
+
+model Company {
+  id           String       @id @default(uuid()) @db.Uuid
+  /// Registration number as entered; the lookup key for Deal History and the Blacklist
+  regNo        String       @map("reg_no")
+  /// Normalised match key: upper case, spaces removed (D-34)
+  regNoKey     String       @unique @map("reg_no_key")
+  name         String
+  sectorModule String?      @map("sector_module")
+  contacts     Json?
+  notes        String?
+  source       RecordSource @default(APP)
+  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime     @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  deals          Deal[]                @relation("Borrower")
+  sponsoredDeals Deal[]                @relation("Sponsor")
+  ratings        Rating[]
+  activity       DealActivity[]
+  manualHistory  ManualHistoryRecord[]
+
+  @@index([name])
+  @@map("companies")
+}
+
+model Deal {
+  id               String       @id @default(uuid()) @db.Uuid
+  /// CX-yyyy-nnn
+  dealId           String       @unique @map("deal_id")
+  companyId        String       @map("company_id") @db.Uuid
+  sponsorCompanyId String?      @map("sponsor_company_id") @db.Uuid
+  facilityType     String?      @map("facility_type")
+  amount           Decimal?     @db.Decimal(18, 2)
+  tenorMonths      Int?         @map("tenor_months")
+  moduleCode       String?      @map("module_code")
+  track            String?
+  /// From lst_Stage: Pipeline Deals, Live Investment (more stages can be added to the list)
+  stage            String
+  stageChangedAt   DateTime?    @map("stage_changed_at") @db.Timestamptz(3)
+  stageChangedById String?      @map("stage_changed_by") @db.Uuid
+  legacyPdfPath    String?      @map("legacy_pdf_path")
+  source           RecordSource @default(APP)
+  createdAt        DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime     @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  company        Company        @relation("Borrower", fields: [companyId], references: [id])
+  sponsorCompany Company?       @relation("Sponsor", fields: [sponsorCompanyId], references: [id])
+  ratings        Rating[]
+  activity       DealActivity[]
+
+  @@index([companyId])
+  @@map("deals")
+}
+
+enum RatingStatus {
+  DRAFT
+  SUBMITTED
+  REVIEWED
+  FINAL
+  SUPERSEDED
+}
+
+model Rating {
+  id                 String       @id @default(uuid()) @db.Uuid
+  /// R-yyyymmdd-hhnnss
+  ratingId           String       @unique @map("rating_id")
+  dealRef            String       @map("deal_ref") @db.Uuid
+  companyId          String       @map("company_id") @db.Uuid
+  ratingType         String       @map("rating_type")
+  status             RatingStatus @default(DRAFT)
+  analystId          String?      @map("analyst_id") @db.Uuid
+  analystName        String?      @map("analyst_name")
+  reviewerId         String?      @map("reviewer_id") @db.Uuid
+  reviewerName       String?      @map("reviewer_name")
+  icApproverId       String?      @map("ic_approver_id") @db.Uuid
+  ratingDate         DateTime?    @map("rating_date") @db.Date
+  savedAt            DateTime     @default(now()) @map("saved_at") @db.Timestamptz(3)
+  finalisedAt        DateTime?    @map("finalised_at") @db.Timestamptz(3)
+  supersededById     String?      @unique @map("superseded_by_id") @db.Uuid
+  parameterSetId     String       @map("parameter_set_id") @db.Uuid
+  methodVersion      String       @map("method_version")
+  workbookVersion    String       @map("workbook_version")
+  engineVersion      String       @map("engine_version")
+  inputSchemaVersion Int          @map("input_schema_version")
+  source             RecordSource @default(APP)
+
+  // Denormalised outputs for reporting (the full result is in rating_results)
+  moduleCode     String?   @map("module_code")
+  track          String?
+  blendedScore   Float?    @map("blended_score")
+  obligorModel   Int?      @map("obligor_model")
+  obligorFinal   Int?      @map("obligor_final")
+  facilityModel  Int?      @map("facility_model")
+  facilityFinal  Int?      @map("facility_final")
+  pd             Float?
+  lgd            Float?
+  ead            Float?
+  elUsd          Float?    @map("el_usd")
+  elPct          Float?    @map("el_pct")
+  recommendation String?
+  overridden     Boolean   @default(false)
+  historyEnabled Boolean   @map("history_enabled")
+  reviewCycle    String?   @map("review_cycle")
+  nextReviewDate DateTime? @map("next_review_date") @db.Date
+  checksErrors   Int       @default(0) @map("checks_errors")
+  checksWarnings Int       @default(0) @map("checks_warnings")
+  knockouts      String[]
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  deal           Deal            @relation(fields: [dealRef], references: [id])
+  company        Company         @relation(fields: [companyId], references: [id])
+  parameterSet   ParameterSet    @relation(fields: [parameterSetId], references: [id])
+  supersededBy   Rating?         @relation("Supersede", fields: [supersededById], references: [id])
+  supersedes     Rating?         @relation("Supersede")
+  inputs         RatingInput?
+  result         RatingResult?
+  checks         RatingCheck[]
+  overrides      Override[]
+  comments       RatingComment[]
+  screeningNotes ScreeningNote[]
+
+  @@index([dealRef, status])
+  @@index([companyId])
+  @@index([status, ratingDate])
+  @@index([nextReviewDate])
+  @@map("ratings")
+}
+
+model RatingInput {
+  ratingRef       String   @id @map("rating_ref") @db.Uuid
+  /// RatingInput document, validated by @crowdaxe/engine ratingInputSchema
+  inputs          Json
+  /// Deal History and Blacklist the rating was calculated with (D-01)
+  historySnapshot Json     @map("history_snapshot")
+  revision        Int      @default(1)
+  updatedAt       DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+  updatedById     String?  @map("updated_by") @db.Uuid
+
+  rating Rating @relation(fields: [ratingRef], references: [id], onDelete: Cascade)
+
+  @@map("rating_inputs")
+}
+
+model RatingResult {
+  ratingRef     String   @id @map("rating_ref") @db.Uuid
+  /// Full RatingResult from the engine; a Final rating's result never changes
+  result        Json
+  engineVersion String   @map("engine_version")
+  computedAt    DateTime @default(now()) @map("computed_at") @db.Timestamptz(3)
+
+  rating Rating @relation(fields: [ratingRef], references: [id], onDelete: Cascade)
+
+  @@map("rating_results")
+}
+
+model RatingCheck {
+  ratingRef String @map("rating_ref") @db.Uuid
+  checkNo   Int    @map("check_no")
+  name      String
+  status    String
+  detail    String
+
+  rating Rating @relation(fields: [ratingRef], references: [id], onDelete: Cascade)
+
+  @@id([ratingRef, checkNo])
+  @@index([status])
+  @@map("rating_checks")
+}
+
+enum OverrideApproval {
+  NOT_REQUIRED
+  PENDING
+  APPROVED
+  DECLINED
+}
+
+model Override {
+  id               String           @id @default(uuid()) @db.Uuid
+  ratingRef        String           @map("rating_ref") @db.Uuid
+  /// Obligor or Facility
+  gradeType        String           @map("grade_type")
+  modelGrade       Int              @map("model_grade")
+  finalGrade       Int              @map("final_grade")
+  /// final − model: positive = weaker (Override Log convention)
+  notches          Int
+  reason           String
+  loggedOn         DateTime         @map("logged_on") @db.Date
+  analystName      String?          @map("analyst_name")
+  requestedById    String?          @map("requested_by") @db.Uuid
+  approvalStatus   OverrideApproval @map("approval_status")
+  approverId       String?          @map("approver_id") @db.Uuid
+  /// IC approver as typed in the workbook (imported overrides)
+  approverNameText String?          @map("approver_name_text")
+  approvalDate     DateTime?        @map("approval_date") @db.Date
+  approvedAt       DateTime?        @map("approved_at") @db.Timestamptz(3)
+  comment          String?
+  source           RecordSource     @default(APP)
+  createdAt        DateTime         @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  rating Rating @relation(fields: [ratingRef], references: [id], onDelete: Cascade)
+
+  @@unique([ratingRef, gradeType])
+  @@index([loggedOn])
+  @@map("overrides")
+}
+
+model RatingComment {
+  id        String   @id @default(uuid()) @db.Uuid
+  ratingRef String   @map("rating_ref") @db.Uuid
+  authorId  String?  @map("author_id") @db.Uuid
+  /// comment, return, review, approval, decline
+  kind      String
+  body      String
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  rating Rating @relation(fields: [ratingRef], references: [id], onDelete: Cascade)
+
+  @@index([ratingRef])
+  @@map("rating_comments")
+}
+
+model DealActivity {
+  id            String       @id @default(uuid()) @db.Uuid
+  /// A-yyyymmdd-hhnnss-n
+  entryId       String       @unique @map("entry_id")
+  companyId     String       @map("company_id") @db.Uuid
+  regNo         String       @map("reg_no")
+  borrowerName  String?      @map("borrower_name")
+  /// The deal's row in deals, when the deal is known to the system
+  dealRef       String?      @map("deal_ref") @db.Uuid
+  /// Deal ID as recorded (blank for blacklist events and notes)
+  dealId        String?      @map("deal_id")
+  eventType     String       @map("event_type")
+  eventDate     DateTime     @map("event_date") @db.Date
+  dueDate       DateTime?    @map("due_date") @db.Date
+  amountDue     Decimal?     @map("amount_due") @db.Decimal(18, 2)
+  amountPaid    Decimal?     @map("amount_paid") @db.Decimal(18, 2)
+  daysLate      Int?         @map("days_late")
+  notes         String?
+  enteredAt     DateTime     @default(now()) @map("entered_at") @db.Timestamptz(3)
+  enteredById   String?      @map("entered_by") @db.Uuid
+  enteredByText String?      @map("entered_by_text")
+  deletedAt     DateTime?    @map("deleted_at") @db.Timestamptz(3)
+  deletedById   String?      @map("deleted_by") @db.Uuid
+  source        RecordSource @default(APP)
+
+  company Company @relation(fields: [companyId], references: [id])
+  deal    Deal?   @relation(fields: [dealRef], references: [id])
+
+  @@index([companyId, eventDate])
+  @@index([dealId])
+  @@map("deal_activity")
+}
+
+/// Facilities from before the CRS, recorded directly as Deal History (D-33)
+model ManualHistoryRecord {
+  id               String    @id @default(uuid()) @db.Uuid
+  companyId        String    @map("company_id") @db.Uuid
+  regNo            String    @map("reg_no")
+  dealRef          String?   @map("deal_ref")
+  facilityType     String?   @map("facility_type")
+  amount           Decimal?  @db.Decimal(18, 2)
+  disbursementDate DateTime? @map("disbursement_date") @db.Date
+  maturityDate     DateTime? @map("maturity_date") @db.Date
+  status           String
+  maxDpd           Int?      @map("max_dpd")
+  notes            String?
+  createdById      String?   @map("created_by") @db.Uuid
+  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  deletedAt        DateTime? @map("deleted_at") @db.Timestamptz(3)
+
+  company Company @relation(fields: [companyId], references: [id])
+
+  @@index([companyId])
+  @@map("manual_history_records")
+}
+
+model ScreeningNote {
+  id            String   @id @default(uuid()) @db.Uuid
+  ratingRef     String   @map("rating_ref") @db.Uuid
+  /// Object key in the private bucket
+  storageKey    String   @unique @map("storage_key")
+  fileName      String   @map("file_name")
+  bytes         Int
+  sha256        String
+  generatedById String?  @map("generated_by") @db.Uuid
+  generatedAt   DateTime @default(now()) @map("generated_at") @db.Timestamptz(3)
+
+  rating Rating @relation(fields: [ratingRef], references: [id], onDelete: Cascade)
+
+  @@index([ratingRef])
+  @@map("screening_notes")
+}
+
+// ============================================================================================
+// Housekeeping
+// ============================================================================================
+
+model ImportRun {
+  id           String    @id @default(uuid()) @db.Uuid
+  startedAt    DateTime  @default(now()) @map("started_at") @db.Timestamptz(3)
+  finishedAt   DateTime? @map("finished_at") @db.Timestamptz(3)
+  mode         String
+  sourceFile   String    @map("source_file")
+  sourceSha256 String    @map("source_sha256")
+  status       String
+  report       Json
+
+  @@map("import_runs")
+}
+
+model SystemStatus {
+  key   String   @id
+  value Json
+  at    DateTime @default(now()) @db.Timestamptz(3)
+
+  @@map("system_status")
+}
+
+model ChangelogEntry {
+  id      Int    @id @default(autoincrement())
+  version String
+  date    String
+  change  String
+
+  @@unique([version, date])
+  @@map("changelog")
+}

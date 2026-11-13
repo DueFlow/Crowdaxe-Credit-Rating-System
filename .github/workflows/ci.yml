@@ -19,8 +19,38 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @crowdaxe/db generate
       - run: pnpm lint
       - run: pnpm format:check
       - run: pnpm typecheck
       - name: Engine tests with coverage (thresholds 95%)
         run: pnpm --filter @crowdaxe/engine test:coverage
+
+  database:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      TEST_DATABASE_ADMIN_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      DIRECT_URL: postgresql://postgres:postgres@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @crowdaxe/db generate
+      - name: Migrations, loader, seed and security tests
+        run: pnpm --filter @crowdaxe/db test
+      - name: Importer tests (workbook tests are skipped: the workbook is not in the repository)
+        run: pnpm --filter @crowdaxe/import test

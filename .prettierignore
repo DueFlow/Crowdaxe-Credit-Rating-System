@@ -4,3 +4,4 @@ docs/**
 coverage/**
 tools/oracle/**
 .github/**
+packages/db/prisma/migrations/**

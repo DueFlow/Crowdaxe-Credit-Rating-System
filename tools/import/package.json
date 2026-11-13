@@ -1,0 +1,24 @@
+{
+  "name": "@crowdaxe/import",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Imports Crowdaxe_CRS.xlsm into the CRS database, with a dry run and a reconciliation report",
+  "bin": {
+    "crs-import": "src/cli.ts"
+  },
+  "scripts": {
+    "import": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@crowdaxe/db": "workspace:*",
+    "@crowdaxe/engine": "workspace:*",
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "vitest": "~3.2.4"
+  }
+}

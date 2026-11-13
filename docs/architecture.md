@@ -171,7 +171,7 @@ About 600 rows per parameter set: negligible space.
 | `rating_comments` | id, rating_id, author_id, body, kind (comment/return/approval), created_at |
 | `deal_activity` | id, entry_id (unique), company_id, reg_no, deal_id (nullable), event_type, event_date, due_date, amount_due, amount_paid, days_late, notes, entered_at, entered_by_id, entered_by_text, deleted_at/by (soft delete, audited) |
 | `manual_history_records` | id, company_id, deal_ref, facility_type, amount, disbursement_date, maturity_date, status, max_dpd, notes (D-33) |
-| `deal_history` (view) | derived from `deal_activity` + `manual_history_records` as of today by the engine's `deriveDealHistory`, materialised in a cache table refreshed in the same transaction as any event change |
+| `deal_history` (derived) | derived on read from `deal_activity` + `manual_history_records` as of today by the engine's `deriveDealHistory` (no cache: with live days past due a cache would be stale daily; Phase 2 decision) |
 | `blacklist` (view) | derived the same way |
 | `screening_notes` | id, rating_id, storage_key, file_name, bytes, sha256, generated_by, generated_at |
 | `import_runs` | id, source_file_sha256, started_at, mode (dry-run/apply), report (jsonb) |

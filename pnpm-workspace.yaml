@@ -2,3 +2,10 @@ packages:
   - 'apps/*'
   - 'packages/*'
   - 'tools/*'
+
+# Packages allowed to run install scripts (pnpm blocks all others).
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - esbuild
+  - prisma
