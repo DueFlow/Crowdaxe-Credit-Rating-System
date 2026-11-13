@@ -9,3 +9,4 @@
 | [architecture.md](architecture.md) | Proposed architecture, hosting, database schema, operations and phase plan |
 
 Source: `Crowdaxe_CRS.xlsm`, Workbook 1.1, Methodology 1.1. Checked independently with the LibreOffice harness in `tools/oracle`.
+| [phase-1-report.md](phase-1-report.md) | Phase 1: calculation engine, parity results and test report |

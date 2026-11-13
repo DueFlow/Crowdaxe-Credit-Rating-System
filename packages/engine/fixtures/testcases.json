@@ -1,0 +1,4682 @@
+{
+ "source": "TestCases sheet, Workbook 1.1",
+ "note": "Kinds: Title, Use, Input, Param, History, Expect (modSelfTest)",
+ "rows": [
+  {
+   "case": "T01",
+   "kind": "Title",
+   "key": null,
+   "value": "S:s9.4 worked example (v1.1)",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C6",
+   "value": "S:SELFTEST-001",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C7",
+   "value": "S:Sample Horticulture Exporter (Pvt) Ltd",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C8",
+   "value": "S:SELFTEST-REG",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C9",
+   "value": "S:New",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C10",
+   "value": "S:B1",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C12",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C13",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C15",
+   "value": "S:Trade finance",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C16",
+   "value": "N:500000",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C19",
+   "value": "N:12",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C20",
+   "value": "D:2026-10-27",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C21",
+   "value": "S:Self-test",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C23",
+   "value": "S:USD, restated at actual conversion rates",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C24",
+   "value": "S:Management accounts only, partly reconciled",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C25",
+   "value": "S:Irrigated export horticulture with contracted offtake",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C26",
+   "value": "S:Ungraded international buyer",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C30",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C31",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N38",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N39",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N40",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N41",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N42",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N43",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N44",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N45",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N46",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N47",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:1.45",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "N:1.15",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N50",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N51",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J52",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N52",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N53",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J54",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N54",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J55",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N55",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J56",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N56",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!J57",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N57",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!E109",
+   "value": "N:0",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!N110",
+   "value": "S:Management accounts only",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Offtake and pre-export finance",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Scorecard!C146",
+   "value": "S:Partial uplift: delivery history with this buyer under two seasons",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Collateral!C9",
+   "value": "S:Offtake proceeds assigned from a strong buyer (grade 1-4)",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Input",
+   "key": "Collateral!D9",
+   "value": "N:600000",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!I48",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!I49",
+   "value": "N:2.83",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C96",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C98",
+   "value": "N:2.95",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C99",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C105",
+   "value": "N:2.99",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C106",
+   "value": "N:5.52",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C115",
+   "value": "N:6.52",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:7",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C145",
+   "value": "S:+2 notches (better)",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C164",
+   "value": "N:0.035",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Collateral!D28",
+   "value": "N:0.1",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C167",
+   "value": "N:0.0035",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C168",
+   "value": "N:1750",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C177",
+   "value": "S:Recommend approval",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!C178",
+   "value": "S:Annual",
+   "tolerance": null
+  },
+  {
+   "case": "T01",
+   "kind": "Expect",
+   "key": "Scorecard!I41",
+   "value": "N:3.44",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T02",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Character rated 1: knockout",
+   "tolerance": null
+  },
+  {
+   "case": "T02",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T02",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "T02",
+   "kind": "Expect",
+   "key": "Scorecard!C174",
+   "value": "S:Knockout",
+   "tolerance": null
+  },
+  {
+   "case": "T02",
+   "kind": "Expect",
+   "key": "Scorecard!C177",
+   "value": "S:Decline (knockout: Character rated 1)",
+   "tolerance": null
+  },
+  {
+   "case": "T03A",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Base DSCR 0.95x, not self-liquidating",
+   "tolerance": null
+  },
+  {
+   "case": "T03A",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T03A",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:0.95",
+   "tolerance": null
+  },
+  {
+   "case": "T03A",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Corporate (general security)",
+   "tolerance": null
+  },
+  {
+   "case": "T03A",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "T03A",
+   "kind": "Expect",
+   "key": "Scorecard!I48",
+   "value": "N:1",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T03A",
+   "kind": "Expect",
+   "key": "Scorecard!C98",
+   "value": "N:1",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T03A",
+   "kind": "Expect",
+   "key": "Scorecard!C175",
+   "value": "S:Knockout",
+   "tolerance": null
+  },
+  {
+   "case": "T03A",
+   "kind": "Expect",
+   "key": "Scorecard!C177",
+   "value": "S:Decline (knockout: base DSCR below 1.00x and not self-liquidating)",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Base DSCR 0.95x, warehouse receipt finance proceeds",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:0.95",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Warehouse receipt finance",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Expect",
+   "key": "Scorecard!C147",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Expect",
+   "key": "Scorecard!C175",
+   "value": "S:Clear",
+   "tolerance": null
+  },
+  {
+   "case": "T03B",
+   "kind": "Expect",
+   "key": "Scorecard!C98",
+   "value": "N:1.95",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T03B",
+   "kind": "Expect",
+   "key": "Scorecard!C177",
+   "value": "S:Recommend approval",
+   "tolerance": null
+  },
+  {
+   "case": "T04",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Overlays 2 + 2 capped at 3",
+   "tolerance": null
+  },
+  {
+   "case": "T04",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T04",
+   "kind": "Input",
+   "key": "Scorecard!E109",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T04",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T04",
+   "kind": "Input",
+   "key": "Scorecard!N109",
+   "value": "S:Over 50% ZiG revenue",
+   "tolerance": null
+  },
+  {
+   "case": "T04",
+   "kind": "Expect",
+   "key": "Scorecard!C114",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T04",
+   "kind": "Expect",
+   "key": "Scorecard!C115",
+   "value": "N:8.52",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05A",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Rounding 6.50 -> 7",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Input",
+   "key": "Scorecard!J48",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Input",
+   "key": "Scorecard!J49",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Input",
+   "key": "Scorecard!N48",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Input",
+   "key": "Scorecard!N49",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T05A",
+   "kind": "Expect",
+   "key": "Scorecard!C105",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05A",
+   "kind": "Expect",
+   "key": "Scorecard!C106",
+   "value": "N:5.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05A",
+   "kind": "Expect",
+   "key": "Scorecard!C115",
+   "value": "N:6.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05A",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:7",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05B",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Rounding 6.43 -> 6",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Input",
+   "key": "Scorecard!J48",
+   "value": "N:3.2",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Input",
+   "key": "Scorecard!J49",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Input",
+   "key": "Scorecard!N48",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Input",
+   "key": "Scorecard!N49",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T05B",
+   "kind": "Expect",
+   "key": "Scorecard!C98",
+   "value": "N:3.1",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05B",
+   "kind": "Expect",
+   "key": "Scorecard!C105",
+   "value": "N:3.03",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05B",
+   "kind": "Expect",
+   "key": "Scorecard!C115",
+   "value": "N:6.43",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05B",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:6",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05C",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Rounding 5.52 -> 6",
+   "tolerance": null
+  },
+  {
+   "case": "T05C",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T05C",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:0",
+   "tolerance": null
+  },
+  {
+   "case": "T05C",
+   "kind": "Input",
+   "key": "Scorecard!N110",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T05C",
+   "kind": "Expect",
+   "key": "Scorecard!C115",
+   "value": "N:5.52",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T05C",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:6",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T06",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Obligor 4 with +3: facility 3",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:0",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!N110",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Warehouse receipt finance",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J48",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!J49",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!N48",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Input",
+   "key": "Scorecard!N49",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T06",
+   "kind": "Expect",
+   "key": "Scorecard!C105",
+   "value": "N:3.75",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T06",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:4",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T06",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T07",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Offtaker grade 5 caps the facility",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!C26",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:0",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!N110",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J48",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!J49",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!N48",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Input",
+   "key": "Scorecard!N49",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T07",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:7",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T07",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T08",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Unsecured: LGD 75%",
+   "tolerance": null
+  },
+  {
+   "case": "T08",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T08",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Unsecured or subordinated",
+   "tolerance": null
+  },
+  {
+   "case": "T08",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:-1",
+   "tolerance": null
+  },
+  {
+   "case": "T08",
+   "kind": "Input",
+   "key": "Collateral!C9",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T08",
+   "kind": "Input",
+   "key": "Collateral!D9",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T08",
+   "kind": "Expect",
+   "key": "Collateral!D28",
+   "value": "N:0.75",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T08",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:8",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T09A",
+   "kind": "Title",
+   "key": null,
+   "value": "S:PF under construction: facility no better than 5",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C6",
+   "value": "S:SELFTEST-PF",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C7",
+   "value": "S:Sample Agro Plant SPV",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C8",
+   "value": "S:SELFTEST-PF",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C9",
+   "value": "S:New",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C10",
+   "value": "S:PF-IND",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C12",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C13",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C15",
+   "value": "S:Project finance",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C16",
+   "value": "N:1000000",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C19",
+   "value": "N:60",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C20",
+   "value": "D:2026-10-27",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C21",
+   "value": "S:Self-test",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C23",
+   "value": "S:USD, restated at actual conversion rates",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C24",
+   "value": "S:Audited USD accounts or fully reconciled bank records",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C30",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C31",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C32",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C34",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Full security package",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N38",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N39",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N40",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N41",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N42",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N43",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N44",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N45",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N46",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N47",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J48",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N48",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J49",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N49",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N50",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N51",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J52",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N52",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N53",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J54",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N54",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J55",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N55",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J56",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N56",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J57",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N57",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J58",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N58",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J59",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N59",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J60",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N60",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J61",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N61",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!J62",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Input",
+   "key": "Scorecard!N62",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09A",
+   "kind": "Expect",
+   "key": "Scorecard!C105",
+   "value": "N:4",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T09A",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T09A",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T09B",
+   "kind": "Title",
+   "key": null,
+   "value": "S:PF with bank performance bond: cap lifted",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C6",
+   "value": "S:SELFTEST-PF",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C7",
+   "value": "S:Sample Agro Plant SPV",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C8",
+   "value": "S:SELFTEST-PF",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C9",
+   "value": "S:New",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C10",
+   "value": "S:PF-IND",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C12",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C13",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C15",
+   "value": "S:Project finance",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C16",
+   "value": "N:1000000",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C19",
+   "value": "N:60",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C20",
+   "value": "D:2026-10-27",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C21",
+   "value": "S:Self-test",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C23",
+   "value": "S:USD, restated at actual conversion rates",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C24",
+   "value": "S:Audited USD accounts or fully reconciled bank records",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C30",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C31",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C32",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C34",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Full security package",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N38",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N39",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N40",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N41",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N42",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N43",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N44",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N45",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N46",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N47",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J48",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N48",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J49",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N49",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N50",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N51",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J52",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N52",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N53",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J54",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N54",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J55",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N55",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J56",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N56",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J57",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N57",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J58",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N58",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J59",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N59",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J60",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N60",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J61",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N61",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!J62",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Input",
+   "key": "Scorecard!N62",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "T09B",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T10A",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Override of 2 notches without approver: blocked",
+   "tolerance": null
+  },
+  {
+   "case": "T10A",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T10A",
+   "kind": "Input",
+   "key": "Scorecard!C153",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T10A",
+   "kind": "Input",
+   "key": "Scorecard!C158",
+   "value": "S:Self-test override",
+   "tolerance": null
+  },
+  {
+   "case": "T10A",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T10A",
+   "kind": "Expect",
+   "key": "Scorecard!C155",
+   "value": "S:Blocked: more than 1 notch needs IC approval",
+   "tolerance": null
+  },
+  {
+   "case": "T10B",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Override of 2 notches with IC approval: applied",
+   "tolerance": null
+  },
+  {
+   "case": "T10B",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T10B",
+   "kind": "Input",
+   "key": "Scorecard!C153",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "T10B",
+   "kind": "Input",
+   "key": "Scorecard!C158",
+   "value": "S:Self-test override",
+   "tolerance": null
+  },
+  {
+   "case": "T10B",
+   "kind": "Input",
+   "key": "Scorecard!C159",
+   "value": "S:IC Chair",
+   "tolerance": null
+  },
+  {
+   "case": "T10B",
+   "kind": "Input",
+   "key": "Scorecard!C160",
+   "value": "D:2026-10-27",
+   "tolerance": null
+  },
+  {
+   "case": "T10B",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T10C",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Override of 1 notch without a reason: blocked",
+   "tolerance": null
+  },
+  {
+   "case": "T10C",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T10C",
+   "kind": "Input",
+   "key": "Scorecard!C153",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T10C",
+   "kind": "Expect",
+   "key": "Scorecard!C154",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T11A",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Deal History on: 3 on time, -0.50",
+   "tolerance": null
+  },
+  {
+   "case": "T11A",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T11A",
+   "kind": "Param",
+   "key": "Hist_Enabled",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T11A",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H1~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11A",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H2~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11A",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H3~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11A",
+   "kind": "Expect",
+   "key": "Scorecard!C128",
+   "value": "N:-0.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T11A",
+   "kind": "Expect",
+   "key": "Scorecard!C127",
+   "value": "S:3 repaid on time",
+   "tolerance": null
+  },
+  {
+   "case": "T11A",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:6",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T11B",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Deal History credit cannot pass grade 3",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J52",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J54",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J55",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J56",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J57",
+   "value": "N:5",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:0",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!N110",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J48",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!J49",
+   "value": "N:4",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!N48",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Input",
+   "key": "Scorecard!N49",
+   "value": "S:e",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Param",
+   "key": "Hist_Enabled",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H1~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H2~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H3~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11B",
+   "kind": "Expect",
+   "key": "Scorecard!C105",
+   "value": "N:4.25",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T11B",
+   "kind": "Expect",
+   "key": "Scorecard!C134",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T11B",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T11C",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Deal History cannot cancel a knockout",
+   "tolerance": null
+  },
+  {
+   "case": "T11C",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T11C",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "T11C",
+   "kind": "Param",
+   "key": "Hist_Enabled",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "T11C",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H1~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11C",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H2~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11C",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H3~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11C",
+   "kind": "Expect",
+   "key": "Scorecard!C177",
+   "value": "S:Decline (knockout: Character rated 1)",
+   "tolerance": null
+  },
+  {
+   "case": "T11D",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Deal History off: no adjustment",
+   "tolerance": null
+  },
+  {
+   "case": "T11D",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "T11D",
+   "kind": "Param",
+   "key": "Hist_Enabled",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "T11D",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H1~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11D",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H2~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11D",
+   "kind": "History",
+   "key": null,
+   "value": "S:S:SELFTEST-REG~S:Sample Horticulture Exporter (Pvt) Ltd~S:SELFTEST-H3~S:Trade finance~N:300000~D:2024-01-01~D:2024-12-31~S:Repaid on time~N:0~S:SELFTEST",
+   "tolerance": null
+  },
+  {
+   "case": "T11D",
+   "kind": "Expect",
+   "key": "Scorecard!C128",
+   "value": "N:0",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "T11D",
+   "kind": "Expect",
+   "key": "Scorecard!C137",
+   "value": "N:7",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E1",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Interpolation: mid-points and the top cap",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:2.2",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Input",
+   "key": "Scorecard!G44",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Input",
+   "key": "Scorecard!G47",
+   "value": "N:-0.5",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Input",
+   "key": "Scorecard!G53",
+   "value": "N:0.225",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Expect",
+   "key": "Scorecard!I44",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E1",
+   "kind": "Expect",
+   "key": "Scorecard!P47",
+   "value": "S:Score required",
+   "tolerance": null
+  },
+  {
+   "case": "E1",
+   "kind": "Expect",
+   "key": "Scorecard!I53",
+   "value": "N:3",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E1",
+   "kind": "Expect",
+   "key": "Scorecard!I48",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E2",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Interpolation: anchors and the bottom floor",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "N:1.25",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Input",
+   "key": "Scorecard!G44",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Input",
+   "key": "Scorecard!G53",
+   "value": "N:0.3",
+   "tolerance": null
+  },
+  {
+   "case": "E2",
+   "kind": "Expect",
+   "key": "Scorecard!I44",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E2",
+   "kind": "Expect",
+   "key": "Scorecard!I48",
+   "value": "N:1",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E2",
+   "kind": "Expect",
+   "key": "Scorecard!I53",
+   "value": "N:4",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E2",
+   "kind": "Expect",
+   "key": "Scorecard!I49",
+   "value": "N:3.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E3",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Interpolation: negative leverage, caps, revenue",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:2.5",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Input",
+   "key": "Scorecard!G44",
+   "value": "N:-1",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Input",
+   "key": "Scorecard!G53",
+   "value": "N:0.15",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Input",
+   "key": "Scorecard!G38",
+   "value": "N:40",
+   "tolerance": null
+  },
+  {
+   "case": "E3",
+   "kind": "Expect",
+   "key": "Scorecard!I44",
+   "value": "N:1",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E3",
+   "kind": "Expect",
+   "key": "Scorecard!I48",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E3",
+   "kind": "Expect",
+   "key": "Scorecard!I53",
+   "value": "N:2",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E3",
+   "kind": "Expect",
+   "key": "Scorecard!I38",
+   "value": "N:5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E3",
+   "kind": "Expect",
+   "key": "Scorecard!P38",
+   "value": "S:OK",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Title",
+   "key": null,
+   "value": "S:B2 input security without the modifier",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C6",
+   "value": "S:SELFTEST-001",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C7",
+   "value": "S:Sample Horticulture Exporter (Pvt) Ltd",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C8",
+   "value": "S:SELFTEST-REG",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C9",
+   "value": "S:New",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C10",
+   "value": "S:B2",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C12",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C13",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C15",
+   "value": "S:Trade finance",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C16",
+   "value": "N:500000",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C19",
+   "value": "N:12",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C20",
+   "value": "D:2026-10-27",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C21",
+   "value": "S:Self-test",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C23",
+   "value": "S:USD, restated at actual conversion rates",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C24",
+   "value": "S:Management accounts only, partly reconciled",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C25",
+   "value": "S:Pharmaceuticals and medical consumables",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C26",
+   "value": "S:Ungraded international buyer",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C30",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C31",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N38",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N39",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N40",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N41",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N42",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N43",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N44",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N45",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N46",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N47",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:1.45",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "N:1.15",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N50",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N51",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J52",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N52",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N53",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J54",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N54",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J55",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N55",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J56",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N56",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!J57",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N57",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!E109",
+   "value": "N:0",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!N110",
+   "value": "S:Management accounts only",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Offtake and pre-export finance",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!C146",
+   "value": "S:Partial uplift: delivery history with this buyer under two seasons",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Collateral!C9",
+   "value": "S:Offtake proceeds assigned from a strong buyer (grade 1-4)",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Collateral!D9",
+   "value": "N:600000",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Input",
+   "key": "Scorecard!G43",
+   "value": "N:0.05",
+   "tolerance": null
+  },
+  {
+   "case": "E4",
+   "kind": "Expect",
+   "key": "Scorecard!I43",
+   "value": "N:4.75",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E5",
+   "kind": "Title",
+   "key": null,
+   "value": "S:B2 no backup power caps the score (v1.0 'at least 7')",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C6",
+   "value": "S:SELFTEST-001",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C7",
+   "value": "S:Sample Horticulture Exporter (Pvt) Ltd",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C8",
+   "value": "S:SELFTEST-REG",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C9",
+   "value": "S:New",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C10",
+   "value": "S:B2",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C12",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C13",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C15",
+   "value": "S:Trade finance",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C16",
+   "value": "N:500000",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C19",
+   "value": "N:12",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C20",
+   "value": "D:2026-10-27",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C21",
+   "value": "S:Self-test",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C23",
+   "value": "S:USD, restated at actual conversion rates",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C24",
+   "value": "S:Management accounts only, partly reconciled",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C25",
+   "value": "S:Pharmaceuticals and medical consumables",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C26",
+   "value": "S:Ungraded international buyer",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C30",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C31",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N38",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J39",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N39",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J40",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N40",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J41",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N41",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J42",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N42",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N43",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N44",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N45",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N46",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N47",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "N:1.45",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "N:1.15",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J50",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N50",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J51",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N51",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J52",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N52",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J53",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N53",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J54",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N54",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J55",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N55",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J56",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N56",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!J57",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N57",
+   "value": "S:self-test evidence",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!E109",
+   "value": "N:0",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!E110",
+   "value": "N:1",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N110",
+   "value": "S:Management accounts only",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C141",
+   "value": "S:Offtake and pre-export finance",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C143",
+   "value": "N:2",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!C146",
+   "value": "S:Partial uplift: delivery history with this buyer under two seasons",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Collateral!C9",
+   "value": "S:Offtake proceeds assigned from a strong buyer (grade 1-4)",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Collateral!D9",
+   "value": "N:600000",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!G43",
+   "value": "N:0.05",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!G75",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Input",
+   "key": "Scorecard!N75",
+   "value": "S:No generator on site",
+   "tolerance": null
+  },
+  {
+   "case": "E5",
+   "kind": "Expect",
+   "key": "Scorecard!I43",
+   "value": "N:2.33",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E6",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Override of a calculated score needs a reason",
+   "tolerance": null
+  },
+  {
+   "case": "E6",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "E6",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:3.5",
+   "tolerance": null
+  },
+  {
+   "case": "E6",
+   "kind": "Input",
+   "key": "Scorecard!G44",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E6",
+   "kind": "Expect",
+   "key": "Scorecard!P44",
+   "value": "S:Override (reason given)",
+   "tolerance": null
+  },
+  {
+   "case": "E7",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Override without a reason is an error",
+   "tolerance": null
+  },
+  {
+   "case": "E7",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "E7",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "N:3.5",
+   "tolerance": null
+  },
+  {
+   "case": "E7",
+   "kind": "Input",
+   "key": "Scorecard!N44",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E7",
+   "kind": "Input",
+   "key": "Scorecard!G44",
+   "value": "N:3",
+   "tolerance": null
+  },
+  {
+   "case": "E7",
+   "kind": "Expect",
+   "key": "Scorecard!P44",
+   "value": "S:Override: reason required",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Financials: calculated metrics and a costed volume shock",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!J38",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!J43",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!J44",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!J45",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!J46",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!J47",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!G48",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!G49",
+   "value": "E:",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!C6",
+   "value": "N:800000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!D6",
+   "value": "N:900000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E6",
+   "value": "N:1000000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!C7",
+   "value": "N:160000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!D7",
+   "value": "N:180000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E7",
+   "value": "N:200000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E10",
+   "value": "N:300000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E12",
+   "value": "N:300000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E13",
+   "value": "N:200000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E14",
+   "value": "N:400000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E20",
+   "value": "N:20000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E21",
+   "value": "N:10000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E22",
+   "value": "N:10000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E23",
+   "value": "N:50000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E24",
+   "value": "N:100000",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Financials!E31",
+   "value": "N:0.6",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!G86",
+   "value": "S:Yes",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!G87",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!N87",
+   "value": "S:not relevant for this borrower",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!G88",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!N88",
+   "value": "S:not relevant for this borrower",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!G89",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!N89",
+   "value": "S:not relevant for this borrower",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!G90",
+   "value": "S:No",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Input",
+   "key": "Scorecard!N90",
+   "value": "S:not relevant for this borrower",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H6",
+   "value": "N:2",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H8",
+   "value": "N:0.2",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H10",
+   "value": "N:4",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H11",
+   "value": "N:4",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H12",
+   "value": "N:1.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H13",
+   "value": "N:2",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H23",
+   "value": "N:1.6",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H24",
+   "value": "N:120000",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Financials!H25",
+   "value": "N:0.4",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I38",
+   "value": "N:1.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I43",
+   "value": "N:4",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I44",
+   "value": "N:2.17",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I45",
+   "value": "N:3.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I46",
+   "value": "N:3.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I47",
+   "value": "N:2",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I48",
+   "value": "N:3.5",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!I49",
+   "value": "N:1",
+   "tolerance": 1e-06
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!AZ38",
+   "value": "S:From Financials: 2.00x",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!P86",
+   "value": "S:OK",
+   "tolerance": null
+  },
+  {
+   "case": "E8",
+   "kind": "Expect",
+   "key": "Scorecard!P87",
+   "value": "S:OK",
+   "tolerance": null
+  },
+  {
+   "case": "E9",
+   "kind": "Title",
+   "key": null,
+   "value": "S:Collateral below the amount requested is flagged",
+   "tolerance": null
+  },
+  {
+   "case": "E9",
+   "kind": "Use",
+   "key": null,
+   "value": "S:T01",
+   "tolerance": null
+  },
+  {
+   "case": "E9",
+   "kind": "Input",
+   "key": "Collateral!D9",
+   "value": "N:400000",
+   "tolerance": null
+  },
+  {
+   "case": "E9",
+   "kind": "Expect",
+   "key": "Collateral!D30",
+   "value": "S:Warning: total collateral US$ 400,000 is below the amount requested US$ 500,000",
+   "tolerance": null
+  }
+ ]
+}

@@ -64,6 +64,8 @@ The inner `ROUND(…, 9)` strips floating-point error before the half-up roundin
 
 **Engine rule (replicating Excel):** compute in IEEE doubles, exactly as Excel does, and implement `excelRound(x, n)` as: take `x` to 15 significant digits (Excel's internal representation), convert to `Decimal`, then round half away from zero to `n` places with decimal.js. `ROUND(ROUND(x,9),2)` is implemented literally as two calls. Grade-score-after-overlays and the Deal History adjustment are plain double additions that are **not** rounded (`C115`, `C133`); the `ROUND(…,2)` in the grade rule absorbs the noise.
 
+Numbers shown in text (`TEXT(x, "#,##0")`, `"0.00"`, `"0.0%"` …) follow the same rule: Excel takes the value to 15 significant digits before rounding for display, so 1,799,155.4999999998 is shown as 1,799,156. The engine does the same (Phase 1 found that LibreOffice does not; see `phase-1-report.md`).
+
 ### 1.4 Blank versus zero
 
 Many formulas test `ISNUMBER` or `= ""`. The engine models every optional numeric input as `number | null` and every text input as `string | null`. `N(x)` in Excel turns blank into 0; the spec states where that happens.
@@ -741,7 +743,7 @@ Detailed user stories are in `workflow-spec.md`.
 | Checks_Total | 13 | num | – | – | 19 |
 | bl_Knockout (Blacklist sheet) | Yes | text | – | – | 13.3 |
 
-Also hard-coded in formulas today and to become parameters (with these exact values): interpolation anchors (5.3), the grade-scale top `10`, the "OK" tolerances 0.005 (score override), 0.000001 (weights, shock values), 0.00001 (haircuts).
+Values that were literals in formulas or outside the Parameters sheet are parameters in set 1.1 from Phase 1 (D-07, D-22, D-23), with the workbook's values: `Interp_NB4_A1`..`A4` (4.5, 3.5, 2.5, 1.5), `Interp_NB2_A1`..`A2` (4, 2), `Tol_ScoreOverride` 0.005, `Tol_Weights` 0.000001, `Tol_ShockValue` 0.000001, `Tol_Haircut` 0.00001, `Overlay_InfoQuality_Ord` 2 (the overlay data check 7 compares with the accounts type), `KO6_Enabled` Yes, `Txt_KO6`, `KO6_CheckBorrowerOnPF` No. The top of the grade scale is the number of rows in the rating scale (10).
 
 Rating scale (grade, description, CX scale, annual PD, appetite, review months, review cycle): 1 Exceptional CX-10 0.25% 12 Annual · 2 Very strong CX-9 0.5% · 3 Strong CX-8 1% · 4 Good CX-7 2% · 5 Satisfactory CX-6 3.5% (grades 1-5 "Eligible", 12 months, Annual) · 6 Adequate CX-5 6% "Eligible with standard conditions" 3 Quarterly · 7 Weak CX-4 10% "Only if facility grade is 6 or better" 3 Quarterly · 8 Very weak CX-3 16% "Decline for new deals" 3 Quarterly · 9 Watchlist CX-2 28% "Existing exposures only; remediation plan" 1 "Monthly (watchlist)" · 10 Default CX-1 100% "Recovery and workout" 3 "Quarterly (recovery and workout)".
 

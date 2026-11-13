@@ -32,6 +32,8 @@ class LO:
         url = uno.systemPathToFileUrl(os.path.abspath(WB))
         self.doc = self.desktop.loadComponentFromURL(url, '_blank', 0, (prop('Hidden', True), prop('MacroExecutionMode', 0)))
         self.sheets = self.doc.Sheets
+        # Recalculate only when asked (calc()), not after every cell written.
+        self.doc.enableAutomaticCalculation(False)
 
     def cell(self, key):
         sh, addr = key.split('!')
@@ -40,6 +42,47 @@ class LO:
     def name_cell(self, name):
         nr = self.doc.NamedRanges.getByName(name)
         return nr.getReferredCells().getCellByPosition(0, 0)
+
+    def clear_inputs_fast(self):
+        """Clear every input cell with one call per contiguous column run (input cells hold no formulas)."""
+        import re
+        for sh, cells in INPUTS.items():
+            s = self.sheets.getByName(sh)
+            cols = {}
+            for a in cells:
+                m = re.match(r'([A-Z]+)(\d+)', a)
+                cols.setdefault(m.group(1), []).append(int(m.group(2)))
+            for col, rows in cols.items():
+                rows.sort()
+                start = prev = rows[0]
+                for r in rows[1:] + [None]:
+                    if r is not None and r == prev + 1:
+                        prev = r
+                        continue
+                    s.getCellRangeByName(f'{col}{start}:{col}{prev}').clearContents(7)
+                    if r is not None:
+                        start = prev = r
+
+    def read_block(self, sheet, rng='A1:BZ200'):
+        """All values of a sheet block in one call: {'B6': value}; numbers as float, text as str."""
+        from com.sun.star.table import CellAddress
+        r = self.sheets.getByName(sheet).getCellRangeByName(rng)
+        data = r.getDataArray()
+        start = r.getRangeAddress()
+        out = {}
+        for i, row in enumerate(data):
+            for j, v in enumerate(row):
+                if v == '' or v is None:
+                    continue
+                c = start.StartColumn + j
+                name = ''
+                while True:
+                    name = chr(65 + c % 26) + name
+                    c = c // 26 - 1
+                    if c < 0:
+                        break
+                out[f'{name}{start.StartRow + i + 1}'] = v
+        return out
 
     def clear_inputs(self):
         for sh, cells in INPUTS.items():

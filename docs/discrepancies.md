@@ -12,7 +12,9 @@ Default if you do not decide: the engine reproduces the workbook exactly (that i
 
 ---
 
-## Summary of decisions I need
+**Status, 13 November 2026:** you approved the recommendations below. How each one is implemented in the engine is listed in `phase-1-report.md`; workflow items follow in Phases 2 to 7. D-51 is still open.
+
+## Summary of decisions (recommendations approved)
 
 | # | Question | My recommendation |
 |---|---|---|

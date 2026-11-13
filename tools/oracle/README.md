@@ -11,6 +11,17 @@ python3 run_asat.py     # the 7 saved ratings with Deal History and Blacklist re
 python3 history.py      # Deal Activity -> Deal History / Blacklist derivation, checked against the sheet
 ```
 
+Fixture generation for the engine tests (Phase 1):
+
+```bash
+python3 extract_params.py > ../../packages/engine/fixtures/parameter-set-1.1.json
+python3 export_fixtures.py ../../packages/engine/fixtures
+python3 generate_golden.py ../../packages/engine/fixtures/parameter-set-1.1.json golden.json 30 20261113
+gzip -9 golden.json   # the committed fixture merges two batches; see docs/phase-1-report.md
+```
+
+`lo.py` switches LibreOffice to manual calculation and clears and reads cells in blocks (about 0.3 s a case).
+
 Results on 13 November 2026: TestCases 102 of 102; saved ratings 4 of 7 against current sheets, 7 of 7 as at rating date (see `docs/discrepancies.md` D-01).
 
 `input_cells.json` lists the unlocked input cells of the Scorecard, Collateral and Financials sheets (the cells `modRating.InputCells` saves).

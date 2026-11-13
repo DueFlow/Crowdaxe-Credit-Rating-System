@@ -1,0 +1,76 @@
+{
+ "source": "Deal History and Blacklist sheets, Workbook 1.1",
+ "dealHistory": [
+  {
+   "regNo": "3187/2011",
+   "borrowerName": "Nyanga Highlands Horticulture (Private) Limited",
+   "dealId": "CX-2026-001",
+   "facilityType": "Trade finance",
+   "amount": 60000,
+   "disbursementDate": "2026-01-20",
+   "maturityDate": "2026-07-20",
+   "status": "Repaid on time",
+   "maxDpd": 0,
+   "notes": "From Deal Activity, updated 17 Jul 2026"
+  },
+  {
+   "regNo": "6642/2016",
+   "borrowerName": "Chinhoyi Dairy Processors (Private) Limited",
+   "dealId": "CX-2026-002",
+   "facilityType": "Working capital line",
+   "amount": 40000,
+   "disbursementDate": "2026-02-10",
+   "maturityDate": "2026-08-10",
+   "status": "Repaid late, 31-90",
+   "maxDpd": 45,
+   "notes": "From Deal Activity, updated 24 Sep 2026"
+  },
+  {
+   "regNo": "2259/2013",
+   "borrowerName": "Karoi Cross-Border Haulage (Private) Limited",
+   "dealId": "CX-2026-003",
+   "facilityType": "Asset finance",
+   "amount": 75000,
+   "disbursementDate": "2026-02-25",
+   "maturityDate": "2027-02-25",
+   "status": "Defaulted",
+   "maxDpd": 158,
+   "notes": "From Deal Activity, updated 30 Oct 2026"
+  },
+  {
+   "regNo": "3187/2011",
+   "borrowerName": "Nyanga Highlands Horticulture (Private) Limited",
+   "dealId": "CX-2026-004",
+   "facilityType": "Trade finance",
+   "amount": 90000,
+   "disbursementDate": "2026-08-18",
+   "maturityDate": "2027-02-18",
+   "status": "Live, current",
+   "maxDpd": 0,
+   "notes": "From Deal Activity, updated 16 Oct 2026"
+  },
+  {
+   "regNo": "6642/2016",
+   "borrowerName": "Chinhoyi Dairy Processors (Private) Limited",
+   "dealId": "CX-2026-005",
+   "facilityType": "Inventory finance",
+   "amount": 50000,
+   "disbursementDate": "2026-10-12",
+   "maturityDate": "2027-02-12",
+   "status": "Live, in arrears",
+   "maxDpd": 1,
+   "notes": "From Deal Activity, updated 04 Nov 2026"
+  }
+ ],
+ "blacklist": [
+  {
+   "regNo": "2259/2013",
+   "borrowerName": "Karoi Cross-Border Haulage (Private) Limited",
+   "status": "Active",
+   "blacklistedOn": "2026-10-30",
+   "reason": "Default on CX-2026-003 and sale of a financed truck without consent",
+   "liftedOn": null,
+   "updated": "2026-10-30"
+  }
+ ]
+}
